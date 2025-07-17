@@ -10,6 +10,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
 
+#загрузка модели для предсказания целостности стен
 model = tf.keras.models.load_model('model/model_vgg.h5')
 
 def predict_image(image_path):
@@ -34,6 +35,7 @@ def predict_image(image_path):
 def index():
     return render_template('index1_buildings.html')
 
+#добавление возможности отправлять свои изображения на сайт для предсказания их целостности
 @app.route('/process', methods=['POST'])
 def process():
     if 'objectId' in request.form:
