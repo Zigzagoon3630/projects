@@ -1,0 +1,3 @@
+почему-то не удается выложить сюда файл, даю ссылку на блокнот в колабе:
+
+https://colab.research.google.com/drive/1LNNfOIamUrQTpT1hAXE7t0-sLbE0_rWw?usp=sharing
