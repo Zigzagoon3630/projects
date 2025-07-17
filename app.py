@@ -10,7 +10,6 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
 
-# Загрузка модели
 model = tf.keras.models.load_model('model/model_vgg.h5')
 
 def predict_image(image_path):
@@ -38,7 +37,6 @@ def index():
 @app.route('/process', methods=['POST'])
 def process():
     if 'objectId' in request.form:
-        # Обработка ввода ID
         object_id = request.form.get('objectId')
         return redirect(url_for('show_results', id=object_id))
     
